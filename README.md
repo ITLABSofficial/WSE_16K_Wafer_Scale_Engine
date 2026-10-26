@@ -2,6 +2,7 @@
 **300mm Monolithic Silicon Wafer, 16.77 PFLOPS FP16, 48x HBM3 Stacks, 8-Hop Skip Highway, 15 kW Liquid-Cooled PDN**
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Academic Paper](https://img.shields.io/badge/Research_Paper-Read_PAPER.md-blueviolet.svg)](PAPER.md)
 [![Silicon](https://img.shields.io/badge/Silicon-300mm_Monolithic_Wafer-blue.svg)]()
 [![Compute](https://img.shields.io/badge/Compute_Density-16.77_PFLOPS_FP16-brightgreen.svg)]()
 [![Memory](https://img.shields.io/badge/HBM3_Capacity-1.15_TB_(39.3_TB%2Fs)-orange.svg)]()
