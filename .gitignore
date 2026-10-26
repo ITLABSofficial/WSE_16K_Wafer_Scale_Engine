@@ -1,0 +1,28 @@
+# Compilation and Simulation Outputs
+sim/
+*.vvp
+*.vcd
+*.vpd
+*.log
+*.jou
+*.out
+*.o
+*.a
+*.so
+sim_*
+dump.vcd
+
+# Synthesis Netlists & Reports
+yosys_run.log
+synth_stat.txt
+netlist.v
+*.vg
+
+# Python & Temporary Files
+__pycache__/
+*.py[cod]
+*$py.class
+*~
+*.swp
+.DS_Store
+*.user_backup
