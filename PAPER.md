@@ -68,8 +68,17 @@ At 2.0 GHz, 128 cycles represents $64\,\text{ns}$ of latency, creating severe sy
 
 To resolve this, WSE_16K introduces the **9-Port Express Mesh Router** (`rtl/ara_noc_express_mesh_router.sv`):
 - **Port Allocation:** 5 standard local ports (North, South, East, West, Local Core) + 4 dedicated **Express Skip Highway Ports** (Express-North, Express-South, Express-East, Express-West).
-- **8-Hop Direct Silicon Bypassing:** Dedicated long-distance metal lines (Layers M11-M12) bypass 8 intermediate clusters in a single clock cycle without buffering.
-- **Routing Algorithm:** A packet destined for distance $\Delta X$ traverses $\lfloor \Delta X / 8 \rfloor$ express hops followed by $(\Delta X \pmod 8)$ local hops.
+- **8-Hop Direct Silicon Bypassing:** Dedicated long-distance thick top metal lines (Layers M11-M12, pitch $2.4\,\mu\text{m}$) bypass 8 intermediate clusters in a single clock cycle without intermediate FIFO queueing.
+- **Deadlock-Free Hierarchical Dimension-Order Routing (DOR X-Y):**
+$$\Delta X = X_{dest} - X_{curr}, \quad \Delta Y = Y_{dest} - Y_{curr}$$
+$$\text{Output Port} = \begin{cases} 
+\text{Express-East / West}, & \text{if } |\Delta X| \ge 8 \\ 
+\text{Local-East / West}, & \text{if } 1 \le |\Delta X| < 8 \\ 
+\text{Express-North / South}, & \text{if } \Delta X = 0 \text{ and } |\Delta Y| \ge 8 \\ 
+\text{Local-North / South}, & \text{if } \Delta X = 0 \text{ and } 1 \le |\Delta Y| < 8 \\ 
+\text{Local-Core}, & \text{if } \Delta X = 0 \text{ and } \Delta Y = 0 
+\end{cases}$$
+Because express hops are unidirectional shortcuts embedded strictly within the X-dimension and Y-dimension, the channel dependency graph remains acyclic, guaranteeing zero protocol deadlocks.
 
 Corner-to-corner traversal drops to:
 $$T_{highway} = \left(\frac{64}{8} \text{ express X} + \frac{64}{8} \text{ express Y}\right) + 2 \text{ local hops} = 8 + 8 + 2 = \mathbf{18\text{ clock cycles}}$$
@@ -79,7 +88,7 @@ At 2.0 GHz, this traverses the entire 300mm wafer in **$9.0\,\text{ns}$**—a **
 
 The perimeter of the 300mm wafer is populated by 48 stacks of OpenHBM3e Base-Die PIM modules connected via TSMC CoWoS-L high-density interposer bridges:
 - **Total Capacity:** $48 \times 24\,\text{GB} = \mathbf{1.152\,\text{TB}}$ contiguous High Bandwidth Memory.
-- **External Bandwidth:** $48 \times 819.2\,\text{GB/s} = \mathbf{39.32\,\text{TB/s}}$ external line rate.
+- **External Bandwidth:** $48 \times 819.2\,\text{GB/s} = \mathbf{39.32\,\text{TB/s}}$ external line rate across 768 pseudo-channels.
 - **Internal TSV PIM Bandwidth:** $48 \times 3.2\,\text{TB/s} = \mathbf{153.60\,\text{TB/s}}$ base-die near-memory throughput.
 
 ---
@@ -104,9 +113,14 @@ Dissipating $15.0\,\text{kW}$ across a 300mm wafer ($A_{wafer} = 706.85\,\text{c
 $$q'' = \frac{15,000\,\text{W}}{706.85\,\text{cm}^2} = 21.22\,\text{W/cm}^2 \quad (\text{Peak Hotspots: } 85.0\,\text{W/cm}^2)$$
 
 WSE_16K employs a direct-contact **Microchannel Liquid Cold Plate** (`rtl/ara_digital_thermal_sensor.sv`):
-- Fluid: Deionized water at an inlet temperature $T_{in} = 45.0^\circ\text{C}$ and flow rate $\dot{V} = 18.5\,\text{L/min}$.
-- Heat transfer coefficient in silicon microchannels ($w_c = 50\,\mu\text{m}, h_c = 300\,\mu\text{m}$):
-$$h = \frac{Nu \cdot k_{fluid}}{D_h} \approx 28,500\,\text{W}/(\text{m}^2 \cdot \text{K})$$
+- Fluid: Deionized water at an inlet temperature $T_{in} = 45.0^\circ\text{C}$ and volumetric flow rate $\dot{V} = 18.5\,\text{L/min}$.
+- Microchannel Geometry: Width $w_c = 50\,\mu\text{m}$, height $h_c = 300\,\mu\text{m}$, fin pitch $100\,\mu\text{m}$.
+- Hydraulic diameter:
+$$D_h = \frac{2 w_c h_c}{w_c + h_c} = \frac{2 \times 50 \times 300}{50 + 300}\,\mu\text{m} \approx 85.7\,\mu\text{m}$$
+- Flow regime: Laminar ($Re = \rho v D_h / \mu \approx 680 < 2,300$), yielding a constant Nusselt number $Nu \approx 4.36$.
+- Convective heat transfer coefficient:
+$$h = \frac{Nu \cdot k_{fluid}}{D_h} \approx \frac{4.36 \times 0.64\,\text{W/(m}\cdot\text{K)}}{85.7 \times 10^{-6}\,\text{m}} \approx 32,580\,\text{W}/(\text{m}^2 \cdot \text{K})$$
+- Pumping pressure drop across wafer diameter: $\Delta P \approx 142\,\text{kPa}$, requiring only $W_{pump} = \dot{V} \Delta P / \eta_{pump} \approx 65.5\,\text{W}$ of electrical pumping power.
 
 ![Figure 3: Thermal Map](figures/fig3_liquid_cooling_thermal_profile.png)
 
