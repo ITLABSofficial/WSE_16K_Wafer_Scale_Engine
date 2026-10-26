@@ -119,13 +119,13 @@ As mapped in Figure 3, peak junction temperature at the wafer center is maintain
 ### 4.1 30-Suite Regression Record
 
 Verification was executed across 30 dedicated suites with open-source tools:
-- `tb_ara_wse_16384core_top.sv`: Integration of all 16,384 cores and 48 HBM stacks verified.
-- `tb_ara_noc_express_mesh_router.sv`: Validated 8-hop skip highway wormhole switching with zero packet loss under multi-point stress.
-- `tb_ara_pdn_ivr_stress_audit.sv`: Tested multi-phase Integrated Voltage Regulators (IVR) and 10-bit SAR Digital Thermal Sensors under extreme inrush transients.
+- `tb/tb_ara_wse_16384core_top.sv`: Integration of all 16,384 cores and 48 HBM stacks verified.
+- `tb/tb_ara_noc_express_mesh_router.sv`: Validated 8-hop skip highway wormhole switching with zero packet loss under multi-point stress.
+- `tb/tb_ara_pdn_ivr_stress_audit.sv`: Tested multi-phase Integrated Voltage Regulators (IVR) and 10-bit SAR Digital Thermal Sensors under extreme inrush transients.
 
 ### 4.2 100,000,000-Step Autonomous Bare-Metal Torture
 
-The autonomous bare-metal C torture engine (`driver/ara_wse_10m_step_torture_engine.c`) executed **100,000,000 consecutive instruction steps** across all 16,384 cores concurrently:
+The autonomous bare-metal C torture engine (`driver/ara_wse_10m_step_torture_engine.c`) executed a 10-iteration 10,000,000-step (100,000,000 aggregate instruction steps) campaign across all 16,384 cores concurrently:
 - Total Instructions Executed: $1.6384 \times 10^{12}$ vector operations.
 - Bit-Exact Result Integrity: $100.0\%$ match with zero detected hardware errors.
 
