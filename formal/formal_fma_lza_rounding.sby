@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 5
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal formal_fma_lza_rounding.sv
+prep -top formal_fma_lza_rounding
+
+[files]
+formal/formal_fma_lza_rounding.sv

@@ -1,0 +1,39 @@
+SBY 19:31:59 [formal/formal_defect_bypass] Removing directory '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_defect_bypass'.
+SBY 19:31:59 [formal/formal_defect_bypass] Copy '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/rtl/ara_noc_defect_bypass.sv' to '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_defect_bypass/src/ara_noc_defect_bypass.sv'.
+SBY 19:31:59 [formal/formal_defect_bypass] engine_0: smtbmc z3
+SBY 19:31:59 [formal/formal_defect_bypass] base: starting process "cd formal/formal_defect_bypass/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 19:31:59 [formal/formal_defect_bypass] base: finished (returncode=0)
+SBY 19:31:59 [formal/formal_defect_bypass] prep: starting process "cd formal/formal_defect_bypass/model; yosys -ql design_prep.log design_prep.ys"
+SBY 19:32:00 [formal/formal_defect_bypass] prep: finished (returncode=0)
+SBY 19:32:00 [formal/formal_defect_bypass] smt2: starting process "cd formal/formal_defect_bypass/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 19:32:00 [formal/formal_defect_bypass] smt2: finished (returncode=0)
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: starting process "cd formal/formal_defect_bypass; yosys-smtbmc -s z3 --presat --noprogress -t 10  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Solver: z3
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY 19:32:00 [formal/formal_defect_bypass] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY 19:32:01 [formal/formal_defect_bypass] engine_0: ##   0:00:01  Checking assumptions in step 5..
+SBY 19:32:01 [formal/formal_defect_bypass] engine_0: ##   0:00:01  Checking assertions in step 5..
+SBY 19:32:02 [formal/formal_defect_bypass] engine_0: ##   0:00:02  Checking assumptions in step 6..
+SBY 19:32:02 [formal/formal_defect_bypass] engine_0: ##   0:00:02  Checking assertions in step 6..
+SBY 19:32:03 [formal/formal_defect_bypass] engine_0: ##   0:00:03  Checking assumptions in step 7..
+SBY 19:32:03 [formal/formal_defect_bypass] engine_0: ##   0:00:03  Checking assertions in step 7..
+SBY 19:32:03 [formal/formal_defect_bypass] engine_0: ##   0:00:03  Checking assumptions in step 8..
+SBY 19:32:03 [formal/formal_defect_bypass] engine_0: ##   0:00:03  Checking assertions in step 8..
+SBY 19:32:06 [formal/formal_defect_bypass] engine_0: ##   0:00:06  Checking assumptions in step 9..
+SBY 19:32:06 [formal/formal_defect_bypass] engine_0: ##   0:00:06  Checking assertions in step 9..
+SBY 19:32:07 [formal/formal_defect_bypass] engine_0: ##   0:00:07  Status: passed
+SBY 19:32:07 [formal/formal_defect_bypass] engine_0: finished (returncode=0)
+SBY 19:32:07 [formal/formal_defect_bypass] engine_0: Status returned by engine: pass
+SBY 19:32:07 [formal/formal_defect_bypass] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:08 (8)
+SBY 19:32:07 [formal/formal_defect_bypass] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:08 (8)
+SBY 19:32:07 [formal/formal_defect_bypass] summary: engine_0 (smtbmc z3) returned pass
+SBY 19:32:07 [formal/formal_defect_bypass] summary: engine_0 did not produce any traces
+SBY 19:32:07 [formal/formal_defect_bypass] DONE (PASS, rc=0)

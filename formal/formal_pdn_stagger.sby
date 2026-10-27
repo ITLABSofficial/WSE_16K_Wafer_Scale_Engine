@@ -1,0 +1,14 @@
+[options]
+mode bmc
+depth 12
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal ara_pdn_stagger_ctrl.sv
+chparam -set NUM_DOMAINS 32 -set DEFAULT_STEP_CYCLES 2 ara_pdn_stagger_ctrl
+prep -top ara_pdn_stagger_ctrl
+
+[files]
+rtl/ara_pdn_stagger_ctrl.sv

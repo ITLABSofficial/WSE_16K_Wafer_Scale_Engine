@@ -1,0 +1,35 @@
+SBY 19:37:05 [formal/formal_interposer_p2p] Removing directory '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_interposer_p2p'.
+SBY 19:37:05 [formal/formal_interposer_p2p] Copy '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/openhbm3_soc/rtl/pim/ara_hbm3_interposer_p2p.sv' to '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_interposer_p2p/src/ara_hbm3_interposer_p2p.sv'.
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: smtbmc z3
+SBY 19:37:05 [formal/formal_interposer_p2p] base: starting process "cd formal/formal_interposer_p2p/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 19:37:05 [formal/formal_interposer_p2p] base: finished (returncode=0)
+SBY 19:37:05 [formal/formal_interposer_p2p] prep: starting process "cd formal/formal_interposer_p2p/model; yosys -ql design_prep.log design_prep.ys"
+SBY 19:37:05 [formal/formal_interposer_p2p] prep: finished (returncode=0)
+SBY 19:37:05 [formal/formal_interposer_p2p] smt2: starting process "cd formal/formal_interposer_p2p/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 19:37:05 [formal/formal_interposer_p2p] smt2: finished (returncode=0)
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: starting process "cd formal/formal_interposer_p2p; yosys-smtbmc -s z3 --presat --noprogress -t 8  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Solver: z3
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assumptions in step 5..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assertions in step 5..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assumptions in step 6..
+SBY 19:37:05 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assertions in step 6..
+SBY 19:37:06 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assumptions in step 7..
+SBY 19:37:06 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Checking assertions in step 7..
+SBY 19:37:06 [formal/formal_interposer_p2p] engine_0: ##   0:00:00  Status: passed
+SBY 19:37:06 [formal/formal_interposer_p2p] engine_0: finished (returncode=0)
+SBY 19:37:06 [formal/formal_interposer_p2p] engine_0: Status returned by engine: pass
+SBY 19:37:06 [formal/formal_interposer_p2p] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 19:37:06 [formal/formal_interposer_p2p] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 19:37:06 [formal/formal_interposer_p2p] summary: engine_0 (smtbmc z3) returned pass
+SBY 19:37:06 [formal/formal_interposer_p2p] summary: engine_0 did not produce any traces
+SBY 19:37:06 [formal/formal_interposer_p2p] DONE (PASS, rc=0)

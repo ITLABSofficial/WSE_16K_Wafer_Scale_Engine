@@ -16,6 +16,23 @@
 
 ---
 
+<!-- BEGIN_README_SILICON_UPGRADE -->
+## Bare-Silicon Die Micrograph, IEEE RTL Schematic & Formal Verification (`SymbiYosys + Z3`)
+
+- **Main Academic Paper (PDF):** [`PAPER.pdf`](PAPER.pdf) ([Markdown](PAPER.md) | [LaTeX](paper.tex))
+- **Standalone Formal Verification Monograph (PDF):** [`PAPER_FORMAL_VERIFICATION.pdf`](PAPER_FORMAL_VERIFICATION.pdf) ([Markdown](PAPER_FORMAL_VERIFICATION.md) | [LaTeX](paper_formal.tex))
+- **Executable SymbiYosys + Z3 Proofs:** [`formal/`](formal/) (`100% PASS, rc=0`)
+
+| 2048x2048 Optical-Microscope Bare Silicon Die (`fig0`) | IEEE/ISSCC Synthesizable RTL & Formal Schematic (`fig5`) |
+| :---: | :---: |
+| ![Bare Silicon Die](figures/fig0_bare_silicon_die_2k.png) | ![IEEE RTL Schematic](figures/fig5_rtl_formal_microarchitecture.png) |
+
+![SymbiYosys + Z3 Formal Verification Convergence](figures/fig6_formal_verification_convergence.png)
+<!-- END_README_SILICON_UPGRADE -->
+
+
+
+
 ## 1. Architectural Highlights
 
 ```

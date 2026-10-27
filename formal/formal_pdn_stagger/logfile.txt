@@ -1,0 +1,43 @@
+SBY 19:40:02 [formal/formal_pdn_stagger] Removing directory '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_pdn_stagger'.
+SBY 19:40:02 [formal/formal_pdn_stagger] Copy '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/rtl/ara_pdn_stagger_ctrl.sv' to '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_pdn_stagger/src/ara_pdn_stagger_ctrl.sv'.
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: smtbmc z3
+SBY 19:40:03 [formal/formal_pdn_stagger] base: starting process "cd formal/formal_pdn_stagger/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 19:40:03 [formal/formal_pdn_stagger] base: finished (returncode=0)
+SBY 19:40:03 [formal/formal_pdn_stagger] prep: starting process "cd formal/formal_pdn_stagger/model; yosys -ql design_prep.log design_prep.ys"
+SBY 19:40:03 [formal/formal_pdn_stagger] prep: finished (returncode=0)
+SBY 19:40:03 [formal/formal_pdn_stagger] smt2: starting process "cd formal/formal_pdn_stagger/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 19:40:03 [formal/formal_pdn_stagger] smt2: finished (returncode=0)
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: starting process "cd formal/formal_pdn_stagger; yosys-smtbmc -s z3 --presat --noprogress -t 12  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Solver: z3
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 5..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 5..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 6..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 6..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 7..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 7..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 8..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 8..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 9..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 9..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 10..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 10..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assumptions in step 11..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Checking assertions in step 11..
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: ##   0:00:00  Status: passed
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: finished (returncode=0)
+SBY 19:40:03 [formal/formal_pdn_stagger] engine_0: Status returned by engine: pass
+SBY 19:40:03 [formal/formal_pdn_stagger] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 19:40:03 [formal/formal_pdn_stagger] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 19:40:03 [formal/formal_pdn_stagger] summary: engine_0 (smtbmc z3) returned pass
+SBY 19:40:03 [formal/formal_pdn_stagger] summary: engine_0 did not produce any traces
+SBY 19:40:03 [formal/formal_pdn_stagger] DONE (PASS, rc=0)

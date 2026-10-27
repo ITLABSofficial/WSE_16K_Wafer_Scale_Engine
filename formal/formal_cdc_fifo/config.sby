@@ -1,0 +1,15 @@
+[options]
+mode bmc
+depth 15
+multiclock on
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal ara_noc_cdc_fifo.sv
+chparam -set DATA_WIDTH 32 ara_noc_cdc_fifo
+prep -top ara_noc_cdc_fifo
+
+[files]
+rtl/ara_noc_cdc_fifo.sv

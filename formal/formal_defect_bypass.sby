@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 10
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal ara_noc_defect_bypass.sv
+prep -top ara_noc_defect_bypass
+
+[files]
+rtl/ara_noc_defect_bypass.sv

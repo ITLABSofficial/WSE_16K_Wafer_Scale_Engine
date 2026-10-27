@@ -1,0 +1,16 @@
+[options]
+mode bmc
+depth 6
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal ara_noc_fifo.sv
+read -formal ara_noc_express_mesh_router.sv
+chparam -set FIFO_DEPTH 2 -set FLIT_W 544 ara_noc_express_mesh_router
+prep -top ara_noc_express_mesh_router
+
+[files]
+rtl/ara_noc_fifo.sv
+rtl/ara_noc_express_mesh_router.sv

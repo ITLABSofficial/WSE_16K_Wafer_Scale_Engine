@@ -1,0 +1,48 @@
+SBY 19:37:06 [formal/formal_express_router] Removing directory '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_express_router'.
+SBY 19:37:06 [formal/formal_express_router] Copy '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/rtl/ara_noc_fifo.sv' to '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_express_router/src/ara_noc_fifo.sv'.
+SBY 19:37:06 [formal/formal_express_router] Copy '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/rtl/ara_noc_express_mesh_router.sv' to '/run/media/it/WD_HDD/Sierra hmb bellekler/show/Ara_MultiCore_WSE_HBM3/formal/formal_express_router/src/ara_noc_express_mesh_router.sv'.
+SBY 19:37:06 [formal/formal_express_router] engine_0: smtbmc z3
+SBY 19:37:06 [formal/formal_express_router] base: starting process "cd formal/formal_express_router/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \hol_pop with list of registers. See ara_noc_express_mesh_router.sv:225
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \selected_vc with list of registers. See ara_noc_express_mesh_router.sv:152
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \req_matrix with list of registers. See ara_noc_express_mesh_router.sv:151
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \hol_target_port with list of registers. See ara_noc_express_mesh_router.sv:117
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \locked_vc with list of registers. See ara_noc_express_mesh_router.sv:239
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \locked with list of registers. See ara_noc_express_mesh_router.sv:237
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \prio_ptr with list of registers. See ara_noc_express_mesh_router.sv:236
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \pre_out_vc with list of registers. See ara_noc_express_mesh_router.sv:194, ara_noc_express_mesh_router.sv:189
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \pre_out_valid with list of registers. See ara_noc_express_mesh_router.sv:188
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \pre_out_flit with list of registers. See ara_noc_express_mesh_router.sv:187
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \locked_port with list of registers. See ara_noc_express_mesh_router.sv:238, ara_noc_express_mesh_router.sv:164
+SBY 19:37:06 [formal/formal_express_router] base: Warning: Replacing memory \grant_matrix with list of registers. See ara_noc_express_mesh_router.sv:170, ara_noc_express_mesh_router.sv:160
+SBY 19:37:07 [formal/formal_express_router] base: Warning: Replacing memory \mem with list of registers. See ara_noc_fifo.sv:55
+SBY 19:37:07 [formal/formal_express_router] base: Warning: Replacing memory \hol_valid with list of registers. See ara_noc_express_mesh_router.sv:98
+SBY 19:37:07 [formal/formal_express_router] base: Warning: Replacing memory \hol_flit with list of registers. See ara_noc_express_mesh_router.sv:97
+SBY 19:37:17 [formal/formal_express_router] base: finished (returncode=0)
+SBY 19:37:17 [formal/formal_express_router] prep: starting process "cd formal/formal_express_router/model; yosys -ql design_prep.log design_prep.ys"
+SBY 19:37:21 [formal/formal_express_router] prep: finished (returncode=0)
+SBY 19:37:21 [formal/formal_express_router] smt2: starting process "cd formal/formal_express_router/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 19:37:22 [formal/formal_express_router] smt2: finished (returncode=0)
+SBY 19:37:22 [formal/formal_express_router] engine_0: starting process "cd formal/formal_express_router; yosys-smtbmc -s z3 --presat --noprogress -t 6  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 19:37:22 [formal/formal_express_router] engine_0: ##   0:00:00  Solver: z3
+SBY 19:37:22 [formal/formal_express_router] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 19:37:23 [formal/formal_express_router] engine_0: ##   0:00:01  Checking assertions in step 0..
+SBY 19:37:28 [formal/formal_express_router] engine_0: ##   0:00:06  Checking assumptions in step 1..
+SBY 19:37:29 [formal/formal_express_router] engine_0: ##   0:00:07  Checking assertions in step 1..
+SBY 19:37:29 [formal/formal_express_router] engine_0: ##   0:00:07  Checking assumptions in step 2..
+SBY 19:37:31 [formal/formal_express_router] engine_0: ##   0:00:08  Checking assertions in step 2..
+SBY 19:37:31 [formal/formal_express_router] engine_0: ##   0:00:08  Checking assumptions in step 3..
+SBY 19:37:36 [formal/formal_express_router] engine_0: ##   0:00:13  Checking assertions in step 3..
+SBY 19:37:39 [formal/formal_express_router] engine_0: ##   0:00:17  Checking assumptions in step 4..
+SBY 19:37:46 [formal/formal_express_router] engine_0: ##   0:00:24  Checking assertions in step 4..
+SBY 19:38:06 [formal/formal_express_router] engine_0: ##   0:00:43  Checking assumptions in step 5..
+SBY 19:38:45 [formal/formal_express_router] engine_0: ##   0:01:23  Checking assertions in step 5..
+SBY 19:39:45 [formal/formal_express_router] engine_0: ##   0:02:23  waiting for solver (1 minute)
+SBY 19:40:01 [formal/formal_express_router] engine_0: ##   0:02:38  Status: passed
+SBY 19:40:01 [formal/formal_express_router] engine_0: finished (returncode=0)
+SBY 19:40:01 [formal/formal_express_router] engine_0: Status returned by engine: pass
+SBY 19:40:01 [formal/formal_express_router] summary: Elapsed clock time [H:MM:SS (secs)]: 0:02:55 (175)
+SBY 19:40:01 [formal/formal_express_router] summary: Elapsed process time [H:MM:SS (secs)]: 0:02:53 (173)
+SBY 19:40:01 [formal/formal_express_router] summary: engine_0 (smtbmc z3) returned pass
+SBY 19:40:01 [formal/formal_express_router] summary: engine_0 did not produce any traces
+SBY 19:40:01 [formal/formal_express_router] DONE (PASS, rc=0)

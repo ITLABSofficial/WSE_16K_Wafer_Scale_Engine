@@ -1,0 +1,13 @@
+[options]
+mode bmc
+depth 8
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal ara_hbm3_interposer_p2p.sv
+prep -top ara_hbm3_interposer_p2p
+
+[files]
+openhbm3_soc/rtl/pim/ara_hbm3_interposer_p2p.sv

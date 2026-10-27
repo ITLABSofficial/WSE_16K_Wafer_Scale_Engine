@@ -1,0 +1,13 @@
+[options]
+mode prove
+depth 10
+
+[engines]
+smtbmc z3
+
+[script]
+read -formal ara_barrier_tree.sv
+prep -top ara_barrier_tree
+
+[files]
+rtl/ara_barrier_tree.sv
